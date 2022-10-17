@@ -10,10 +10,13 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       perm_name: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        unique: true,
+        allowNull: false
       },
       perm_description: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        unique: false
       },
       createdAt: {
         allowNull: false,
