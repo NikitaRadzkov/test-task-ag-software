@@ -1,7 +1,4 @@
-'use strict';
-const {
-  Model
-} = require('sequelize');
+const { Model } = require('sequelize');
 const bcrypt = require('bcryptjs');
 
 module.exports = (sequelize, DataTypes) => {
@@ -13,29 +10,32 @@ module.exports = (sequelize, DataTypes) => {
       });
     }
   }
-  User.init({
-    role_id: DataTypes.INTEGER,
-    email: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      unique: true
+  User.init(
+    {
+      role_id: DataTypes.INTEGER,
+      email: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        unique: true,
+      },
+      password: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
+      fullname: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
+      phone: {
+        type: DataTypes.STRING,
+        allowNull: true,
+      },
     },
-    password: {
-      type: DataTypes.STRING,
-      allowNull: false
+    {
+      sequelize,
+      modelName: 'User',
     },
-    fullname: {
-      type: DataTypes.STRING,
-      allowNull: false
-    },
-    phone:  {
-      type: DataTypes.STRING,
-      allowNull: true
-    }
-  }, {
-    sequelize,
-    modelName: 'User',
-  });
+  );
 
   User.beforeSave(async (user, options) => {
     if (user.password) {
@@ -45,10 +45,10 @@ module.exports = (sequelize, DataTypes) => {
 
   User.prototype.comparePassword = function (passw, cb) {
     bcrypt.compare(passw, this.password, function (err, isMatch) {
-        if (err) {
-            return cb(err);
-        }
-        cb(null, isMatch);
+      if (err) {
+        return cb(err);
+      }
+      cb(null, isMatch);
     });
   };
   return User;
