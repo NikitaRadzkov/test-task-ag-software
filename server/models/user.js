@@ -4,9 +4,8 @@ const bcrypt = require('bcryptjs');
 module.exports = (sequelize, DataTypes) => {
   class User extends Model {
     static associate(models) {
-      User.hasOne(models.Role, {
-        foreignKey: 'user_id',
-        as: 'role',
+      User.belongsTo(models.Role, {
+        foreignKey: 'role_id',
       });
     }
   }
@@ -36,13 +35,11 @@ module.exports = (sequelize, DataTypes) => {
       modelName: 'User',
     },
   );
-
   User.beforeSave(async (user, options) => {
     if (user.password) {
       user.password = bcrypt.hashSync(user.password, bcrypt.genSaltSync(10), null);
     }
   });
-
   User.prototype.comparePassword = function (passw, cb) {
     bcrypt.compare(passw, this.password, function (err, isMatch) {
       if (err) {
