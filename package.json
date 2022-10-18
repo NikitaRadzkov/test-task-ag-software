@@ -1,0 +1,29 @@
+{
+  "name": "test-task-ag-software",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint \"{server, client}/**/*.js\" --fix",
+    "format": "prettier --write \"{server, client}/**/*.js\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NikitaRadzkov/test-task-ag-software.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NikitaRadzkov/test-task-ag-software/issues"
+  },
+  "homepage": "https://github.com/NikitaRadzkov/test-task-ag-software#readme",
+  "dependencies": {
+    "eslint": "^8.25.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-unicorn": "^44.0.2",
+    "prettier": "^2.7.1"
+  }
+}
