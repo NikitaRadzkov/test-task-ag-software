@@ -1,6 +1,6 @@
-import { Model } from 'sequelize';
+const { Model } = require('sequelize');
 
-export default (sequelize, DataTypes) => {
+module.exports = (sequelize, DataTypes) => {
   class Permission extends Model {
     static associate(models) {
       Permission.belongsToMany(models.Role, {
