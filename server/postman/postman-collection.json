@@ -198,7 +198,7 @@
         ],
         "body": {
           "mode": "raw",
-          "raw": "{\n    \"perm_name\": \"get_products\",\n    \"perm_description\": \"Get List of Products\"\n}"
+          "raw": "{\n    \"perm_name\": \"get_posts\",\n    \"perm_description\": \"Get List of Posts\"\n}"
         },
         "url": {
           "raw": "{{host}}permissions",
@@ -281,7 +281,7 @@
         ],
         "body": {
           "mode": "raw",
-          "raw": "{\n    \"perm_name\": \"get_products\",\n    \"perm_description\": \"Get List of Products\"\n}"
+          "raw": "{\n    \"perm_name\": \"get_posts\",\n    \"perm_description\": \"Get List of Posts\"\n}"
         },
         "url": {
           "raw": "{{host}}permissions/1",

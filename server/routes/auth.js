@@ -51,7 +51,7 @@ router.post('/signin', function (req, res) {
       }
       user.comparePassword(req.body.password, (err, isMatch) => {
         if (isMatch && !err) {
-          var token = jwt.sign(JSON.parse(JSON.stringify(user)), 'nodeauthsecret', {
+          const token = jwt.sign(JSON.parse(JSON.stringify(user)), 'nodeauthsecret', {
             expiresIn: 86400 * 30,
           });
           jwt.verify(token, 'nodeauthsecret', function (err, data) {
