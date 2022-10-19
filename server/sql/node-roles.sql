@@ -1,3 +1,3 @@
 INSERT INTO roles(role_name, role_description, createdAt, updatedAt) VALUES('admin', 'The admin sees all users in the system and can change the role of another', now(), now());
-INSERT INTO roles(role_name, role_description, createdAt, updatedAt) VALUES('editor', 'Editor can create and edit articles ', now(), now());
-INSERT INTO roles(role_name, role_description, createdAt, updatedAt) VALUES('user', 'Userc can only view articles ', now(), now());
+INSERT INTO roles(role_name, role_description, createdAt, updatedAt) VALUES('editor', 'Editor can create and edit articles', now(), now());
+INSERT INTO roles(role_name, role_description, createdAt, updatedAt) VALUES('user', 'Userc can only view articles', now(), now());

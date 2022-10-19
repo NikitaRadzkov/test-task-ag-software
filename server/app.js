@@ -28,7 +28,7 @@ app.use('/api/v1/auth', authRouter);
 app.use('/api/v1/users', usersRouter);
 app.use('/api/v1/roles', rolesRouter);
 app.use('/api/v1/permissions', permsRouter);
-app.use('/api/v1/products', postsRouter);
+app.use('/api/v1/posts', postsRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
