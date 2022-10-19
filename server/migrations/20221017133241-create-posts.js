@@ -9,7 +9,7 @@ module.exports = {
         type: Sequelize.INTEGER,
       },
       post_name: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.STRING,
       },
       post_description: {
         type: Sequelize.STRING,
