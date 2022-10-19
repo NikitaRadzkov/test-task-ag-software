@@ -2,9 +2,6 @@ const { RolePermission } = require('../models');
 const { Permission } = require('../models');
 
 class Helper {
-  constructor() {}
-
-  // eslint-disable-next-line class-methods-use-this
   checkPermission(roleId, permName) {
     return new Promise((resolve, reject) => {
       Permission.findOne({
