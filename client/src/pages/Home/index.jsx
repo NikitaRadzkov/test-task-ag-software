@@ -7,7 +7,7 @@ import { blogList } from '../../config/data';
 import Navigation from '../../components/Navigation';
 
 const Home = () => {
-  const [blogs, setBlogs] = useState([]);
+  const [blogs, setBlogs] = useState(blogList);
   const [searchKey, setSearchKey] = useState('');
 
   const handleSearchBar = (e) => {
