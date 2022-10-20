@@ -1,13 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect} from 'react';
 import EmptyList from '../../components/EmptyList';
 import BlogList from '../../components/BlogList';
 import PreviewTitle from '../../components/PreviewTitle';
 import SearchBar from '../../components/SearchBar';
-import { blogList } from '../../config/data';
 import Navigation from '../../components/Navigation';
+import axios from 'axios';
+import { url } from '../../config/constants';
 
 const Home = () => {
-  const [blogs, setBlogs] = useState(blogList);
+  const [blogs, setBlogs] = useState([]);
   const [searchKey, setSearchKey] = useState('');
 
   const handleSearchBar = (e) => {
@@ -24,9 +25,14 @@ const Home = () => {
   };
 
   const handleClearSearch = () => {
-    setBlogs(blogList);
+    setBlogs(blogs);
     setSearchKey('');
   };
+
+  useEffect(() => {
+    axios.get(`${url}/posts`)
+      .then(res => setBlogs(res.data))
+  }, [])
 
   return (
     <>
