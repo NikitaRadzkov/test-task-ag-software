@@ -69,8 +69,7 @@ export const blogList = [
     authorName: 'John Doe',
     authorAvatar: '/assets/images/author.jpg',
     createdAt: 'June 03, 2021',
-    cover:
-      '/assets/images/Purple-Combination-colors-graphic-design-predictions-1024x576-1024x576.jpg',
+    cover: '/assets/images/Purple-Combination-colors-graphic-design-predictions-1024x576-1024x576.jpg',
   },
   {
     id: 7,

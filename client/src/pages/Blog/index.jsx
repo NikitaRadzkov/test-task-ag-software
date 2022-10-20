@@ -19,15 +19,15 @@ const Blog = () => {
 
   return (
     <>
-      <Link className='blog-goBack' to='/'>
+      <Link className="blog-goBack" to="/">
         <span> &#8592;</span> <span>Go Back</span>
       </Link>
       {blog ? (
-        <div className='blog-wrap'>
+        <div className="blog-wrap">
           <header>
-            <p className='blog-date'>Published {blog.createdAt}</p>
+            <p className="blog-date">Published {blog.createdAt}</p>
             <h1>{blog.title}</h1>
-            <div className='blog-subCategory'>
+            <div className="blog-subCategory">
               {blog.subCategory.map((category, i) => (
                 <div key={i}>
                   <Chip label={category} />
@@ -35,8 +35,8 @@ const Blog = () => {
               ))}
             </div>
           </header>
-          <img src={blog.cover} alt='cover' />
-          <p className='blog-desc'>{blog.description}</p>
+          <img src={blog.cover} alt="cover" />
+          <p className="blog-desc">{blog.description}</p>
         </div>
       ) : (
         <EmptyList />

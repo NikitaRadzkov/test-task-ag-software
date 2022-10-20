@@ -18,7 +18,7 @@ const Home = () => {
   const handleSearchResults = () => {
     const allBlogs = blogList;
     const filteredBlogs = allBlogs.filter((blog) =>
-      blog.category.toLowerCase().includes(searchKey.toLowerCase().trim())
+      blog.category.toLowerCase().includes(searchKey.toLowerCase().trim()),
     );
     setBlogs(filteredBlogs);
   };

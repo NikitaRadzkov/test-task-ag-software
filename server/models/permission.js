@@ -6,23 +6,26 @@ module.exports = (sequelize, DataTypes) => {
       Permission.belongsToMany(models.Role, {
         through: 'RolePermission',
         as: 'roles',
-        foreignKey: 'perm_id'
+        foreignKey: 'perm_id',
       });
     }
-  };
-  Permission.init({
-    perm_name: {
-      type: DataTypes.STRING,
-      unique: true,
-      allowNull: false
+  }
+  Permission.init(
+    {
+      perm_name: {
+        type: DataTypes.STRING,
+        unique: true,
+        allowNull: false,
+      },
+      perm_description: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
     },
-    perm_description:  {
-      type: DataTypes.STRING,
-      allowNull: false
-    }
-  }, {
-    sequelize,
-    modelName: 'Permission',
-  });
+    {
+      sequelize,
+      modelName: 'Permission',
+    },
+  );
   return Permission;
 };
