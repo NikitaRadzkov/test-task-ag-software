@@ -19,7 +19,7 @@ const PostCreator = () => {
   };
 
   return (
-    <div className="container">
+    <div className="wrapper">
       <Navigation />
       <div className="post-title">
         <h2>Crete new post</h2>

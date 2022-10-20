@@ -18,7 +18,7 @@ const Login = () => {
   };
 
   return (
-    <div className="container">
+    <div className="wrapper">
       <Navigation />
       <div className="login-titles">
         <h2>Login into your account</h2>

@@ -7,7 +7,7 @@ import { blogList } from '../../config/data';
 import Navigation from '../../components/Navigation';
 
 const Home = () => {
-  const [blogs, setBlogs] = useState(blogList);
+  const [blogs, setBlogs] = useState([]);
   const [searchKey, setSearchKey] = useState('');
 
   const handleSearchBar = (e) => {
@@ -16,7 +16,7 @@ const Home = () => {
   };
 
   const handleSearchResults = () => {
-    const allBlogs = blogList;
+    const allBlogs = blogs;
     const filteredBlogs = allBlogs.filter((blog) =>
       blog.category.toLowerCase().includes(searchKey.toLowerCase().trim()),
     );

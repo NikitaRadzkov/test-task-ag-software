@@ -29,7 +29,7 @@ const Register = () => {
   };
 
   return (
-    <div className="container">
+    <div className="wrapper">
       <Navigation />
       <div className="register-titles">
         <h2>Crete new account</h2>
