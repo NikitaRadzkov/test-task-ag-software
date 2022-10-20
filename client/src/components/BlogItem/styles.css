@@ -47,14 +47,6 @@
   align-items: center;
 }
 
-.blogItem-author img {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-right: 0.5rem;
-}
-
 .blogItem-author p {
   font-size: 0.6rem;
   color: #a9a9a9;

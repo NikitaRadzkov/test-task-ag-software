@@ -1,17 +1,22 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
-import { blogList } from '../../config/data';
 import Chip from '../../components/Chip';
 import EmptyList from '../../components/EmptyList';
 import './styles.css';
 import { Link } from 'react-router-dom';
+import { url } from '../../config/constants';
+import axios from 'axios'
 
 const Blog = () => {
   const { id } = useParams();
+  const [posts, setPosts] = useState([]);
   const [blog, setBlog] = useState(null);
 
   useEffect(() => {
-    let blog = blogList.find((blog) => blog.id === parseInt(id));
+    axios.get(`${url}posts`)
+      .then(res => setPosts(res.data))
+
+    let blog = posts.find((blog) => blog.id === parseInt(id));
     if (blog) {
       setBlog(blog);
     }
@@ -25,18 +30,14 @@ const Blog = () => {
       {blog ? (
         <div className="blog-wrap">
           <header>
-            <p className="blog-date">Published {blog.createdAt}</p>
-            <h1>{blog.title}</h1>
+            <p className="blog-date">Published {blog.updatedAt}</p>
+            <h1>{blog.post_name}</h1>
             <div className="blog-subCategory">
-              {blog.subCategory.map((category, i) => (
-                <div key={i}>
-                  <Chip label={category} />
-                </div>
-              ))}
+            <Chip label={blog.category} />
             </div>
           </header>
-          <img src={blog.cover} alt="cover" />
-          <p className="blog-desc">{blog.description}</p>
+          <img src={blog.post_image} alt="cover" />
+          <p className="blog-desc">{blog.post_description}</p>
         </div>
       ) : (
         <EmptyList />

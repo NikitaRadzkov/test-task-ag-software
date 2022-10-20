@@ -22,10 +22,6 @@ const Register = () => {
 
     axios.post(`${url}auth/signup`, data).then(res => res.json())
       .then(json => console.log(json));
-    console.log(email)
-    console.log(password)
-    console.log(fullname)
-    console.log(phone)
   };
 
   return (
