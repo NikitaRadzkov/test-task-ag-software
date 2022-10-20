@@ -1,0 +1,35 @@
+.post-title h2{
+  font-size: 2rem;
+  color: #0080ff;
+}
+
+.post-inputs {
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0;
+  align-items: center;
+}
+
+.post-inputs input {
+  width: 380px;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  border-width: 1px;
+}
+
+.post-inputs textarea {
+  width: 700px;
+  height: 350px;
+  padding: 10px;
+}
+
+.post-button button {
+  width: 180px;
+  font-size: 15px;
+  padding: 10px;
+  border-radius: 10px;
+  border-width: 0px;
+  background-color: #0f52ba;
+  color: #fff;
+}
