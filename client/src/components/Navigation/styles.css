@@ -1,0 +1,23 @@
+.nav-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 30px;
+}
+
+.nav-links span {
+  font-size: 18px;
+  margin-right: 30px;
+}
+
+.nav-link-signup {
+  background-color: #0f52ba;
+  color: #fff;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #000;
+}

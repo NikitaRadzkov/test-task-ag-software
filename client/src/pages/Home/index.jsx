@@ -4,6 +4,7 @@ import BlogList from '../../components/BlogList';
 import PreviewTitle from '../../components/PreviewTitle';
 import SearchBar from '../../components/SearchBar';
 import { blogList } from '../../config/data';
+import Navigation from '../../components/Navigation';
 
 const Home = () => {
   const [blogs, setBlogs] = useState(blogList);
@@ -29,6 +30,7 @@ const Home = () => {
 
   return (
     <>
+      <Navigation />
       <PreviewTitle />
       <SearchBar
         value={searchKey}
