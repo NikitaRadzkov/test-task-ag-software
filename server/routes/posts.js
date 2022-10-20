@@ -18,15 +18,16 @@ router.post(
     helper
       .checkPermission(req.user.role_id, 'post_add')
       .then((rolePerm) => {
-        if (!req.body.post_name || !req.body.post_description || !req.body.post_image) {
+        if (!req.body.post_name || !req.body.post_description || !req.body.category) {
           res.status(400).send({
-            msg: 'Please pass Post name, description, image.',
+            msg: 'Please pass Post name, description, category.',
           });
         } else {
           Posts.create({
             post_name: req.body.post_name,
             post_description: req.body.post_description,
             post_image: req.body.post_image,
+            category: req.body.category
           })
             .then((post) => res.status(201).send(post))
             .catch((error) => {
@@ -95,7 +96,7 @@ router.put(
     helper
       .checkPermission(req.user.role_id, 'post_update')
       .then((rolePerm) => {
-        if (!req.body.post_name || !req.body.post_description || !req.body.post_image) {
+        if (!req.body.user_id || !req.body.post_name || !req.body.post_description || !req.body.category) {
           res.status(400).send({
             msg: 'Please pass Post name, description or image.',
           });
@@ -104,9 +105,10 @@ router.put(
             .then((post) => {
               Posts.update(
                 {
-                  post_name: req.body.post_name || user.post_name,
-                  post_description: req.body.post_description || user.post_description,
-                  post_image: req.body.post_image || user.post_image,
+                  post_name: req.body.post_name,
+                  post_description: req.body.post_description,
+                  post_image: req.body.post_image,
+                  category: req.body.category
                 },
                 {
                   where: {

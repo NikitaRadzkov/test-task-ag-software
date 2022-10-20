@@ -8,14 +8,24 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
+      user_id: {
+        type: Sequelize.INTEGER
+      },
       post_name: {
         type: Sequelize.STRING,
+        allowNull: false,
       },
       post_description: {
         type: Sequelize.STRING,
+        allowNull: true,
       },
       post_image: {
         type: Sequelize.STRING,
+        allowNull: true,
+      },
+      category: {
+        type: DataTypes.STRING,
+        allowNull: true,
       },
       createdAt: {
         allowNull: false,
