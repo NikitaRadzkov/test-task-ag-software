@@ -9,8 +9,8 @@ const Navigation = () => (
       <Link className='nav-link' to='/post-creator'><span>Create Post</span></Link>
     </div>
     <div className='nav-links'>
-      <Link className='nav-link' to='/sign-in'><span>Sign In</span></Link>
-      <Link className='nav-link' to='/sign-up'><span className='nav-link-signup'>Sign Up</span></Link>
+      <Link className='nav-link' to='/login'><span>Sign In</span></Link>
+      <Link className='nav-link' to='/register'><span className='nav-link-signup'>Sign Up</span></Link>
     </div>
   </header>
 );
