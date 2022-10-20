@@ -15,6 +15,12 @@
   margin: 30px 0;
 }
 
+.login-titles h2{
+  font-size: 2rem;
+  color: #0080ff;
+  margin-bottom: 10px;
+}
+
 .login-titles span {
   font-size: 22px;
 }

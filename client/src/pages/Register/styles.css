@@ -15,6 +15,12 @@
   margin: 30px 0;
 }
 
+.register-titles h2 {
+  font-size: 2rem;
+  color: #0080ff;
+  margin-bottom: 10px;
+}
+
 .register-titles span {
   font-size: 22px;
 }

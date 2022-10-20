@@ -3,28 +3,25 @@ import './styles.css';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { url } from '../../config/constants';
+import axios from 'axios';
+import Navigation from '../../components/Navigation';
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   const handleClick = () => {
-    fetch(`${url}signin`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        email,
-        password,
-      }),
-    });
+    axios.post(`${url}auth/signin`, {
+      email,
+      password,
+    }).then(res => console.log(res));
   };
 
   return (
     <div className="container">
+      <Navigation />
       <div className="login-titles">
-        <span>Login into your account</span>
+        <h2>Login into your account</h2>
         <span>
           Don't have an account yet? <Link to="/register">Create New</Link>
         </span>

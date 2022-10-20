@@ -1,8 +1,8 @@
 import React from 'react';
 import './styles.css';
-import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { url } from '../../config/constants';
+import axios from 'axios'
 import Navigation from '../../components/Navigation';
 
 const PostCreator = () => {
@@ -11,16 +11,10 @@ const PostCreator = () => {
   const [image, setImage] = useState('');
 
   const handleClick = () => {
-    fetch(`${url}posts`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        post_name: title,
-        post_description: description,
-        post_iamge: image,
-      }),
+    axios.post(`${url}posts`, {
+      post_name: title,
+      post_description: description,
+      post_iamge: image,
     });
   };
 
