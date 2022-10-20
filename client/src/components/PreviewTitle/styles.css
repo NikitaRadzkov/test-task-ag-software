@@ -1,0 +1,23 @@
+.preview-title {
+  text-align: center;
+}
+
+.preview-title h2 {
+  color: #0080ff;
+  font-size: 2rem;
+}
+
+.preview-title h1 {
+  font-size: 3rem;
+  color: #0f52ba;
+  margin-bottom: 1rem;
+}
+
+.preview-title h1 span {
+  color: #b0c4de;
+}
+
+.preview-title p {
+  color: #a9a9a9;
+  font-weight: 500;
+}
